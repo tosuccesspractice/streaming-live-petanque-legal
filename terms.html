@@ -1,0 +1,402 @@
+<title>Conditions d'utilisation — Streaming Live Pétanque</title>
+<style>
+  :root {
+    --bg: #faf6ef;
+    --surface: #ffffff;
+    --surface-2: #f1ece1;
+    --text: #211d17;
+    --text-muted: #6b6152;
+    --border: #e4dccb;
+    --accent: #1e5fb8;
+    --accent-soft: #e8eefb;
+    --rule: #d8cfba;
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #171410;
+    --surface: #1f1c16;
+    --surface-2: #262219;
+    --text: #f2ede2;
+    --text-muted: #b3a891;
+    --border: #35301f;
+    --accent: #6ea3ec;
+    --accent-soft: #1e2c42;
+    --rule: #3a3627;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #171410;
+      --surface: #1f1c16;
+      --surface-2: #262219;
+      --text: #f2ede2;
+      --text-muted: #b3a891;
+      --border: #35301f;
+      --accent: #6ea3ec;
+      --accent-soft: #1e2c42;
+      --rule: #3a3627;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  .masthead {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+  }
+
+  .mark .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex: none;
+  }
+
+  .masthead .doc-type {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  h1 {
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 4.5vw, 2.7rem);
+    line-height: 1.12;
+    margin: 0 0 10px;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+
+  .subtitle {
+    color: var(--text-muted);
+    font-size: 1.02rem;
+    margin: 0 0 28px;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+    font-size: 0.86rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .meta-row dt {
+    font-weight: 600;
+    color: var(--text);
+    display: inline;
+  }
+
+  .meta-row dt::after { content: " "; }
+
+  .meta-item { white-space: nowrap; }
+
+  .summary-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin: 8px 0 48px;
+  }
+
+  .summary-card p {
+    margin: 0;
+    font-size: 0.98rem;
+    color: var(--text-muted);
+  }
+
+  .summary-card strong { color: var(--text); font-weight: 600; }
+
+  section {
+    margin-bottom: 40px;
+    scroll-margin-top: 20px;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .section-num {
+    font-family: Georgia, "Iowan Old Style", serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--accent);
+    flex: none;
+    width: 1.6em;
+  }
+
+  h2 {
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+    font-weight: 700;
+    font-size: 1.32rem;
+    margin: 0;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+
+  .section-body {
+    margin-left: calc(1.6em + 14px);
+  }
+
+  .section-body p {
+    margin: 0 0 14px;
+    max-width: 62ch;
+  }
+
+  .section-body ul {
+    margin: 0 0 14px;
+    padding-left: 1.2em;
+  }
+
+  .section-body li {
+    margin-bottom: 8px;
+    max-width: 60ch;
+  }
+
+  .fact-table-wrap { overflow-x: auto; }
+
+  .fact-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 6px 0 18px;
+    font-size: 0.92rem;
+  }
+
+  .fact-table th, .fact-table td {
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .fact-table th {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    font-weight: 600;
+    width: 38%;
+  }
+
+  .fact-table td { color: var(--text); font-variant-numeric: tabular-nums; }
+
+  .pill {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 2px 9px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  a { color: var(--accent); text-decoration-color: var(--rule); text-underline-offset: 2px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .contact-card {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .contact-card .label {
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .contact-card .email {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (max-width: 560px) {
+    .section-body { margin-left: 0; margin-top: 6px; }
+    .section-head { align-items: flex-start; }
+  }
+</style>
+
+<div class="page">
+
+  <div class="masthead">
+    <span class="mark"><span class="dot"></span>Streaming Live Pétanque</span>
+    <span class="doc-type">Conditions générales d'utilisation</span>
+  </div>
+
+  <h1>Conditions générales d'utilisation</h1>
+  <p class="subtitle">Application mobile Android « Streaming Live Pétanque »</p>
+
+  <dl class="meta-row">
+    <div class="meta-item"><dt>Dernière mise à jour</dt><span>11 août 2026</span></div>
+    <div class="meta-item"><dt>Éditeur</dt><span>Ouamassi</span></div>
+    <div class="meta-item"><dt>Contact</dt><span>ouamassipetanque@gmail.com</span></div>
+  </dl>
+
+  <div class="summary-card">
+    <p><strong>En résumé&nbsp;:</strong> l'application vous permet de diffuser en direct vos matchs de pétanque sur votre propre chaîne YouTube avec un tableau de score incrusté. Vous êtes seul responsable du contenu que vous diffusez. Un essai gratuit de 14 jours est proposé, suivi d'un abonnement mensuel optionnel géré par Google Play, résiliable à tout moment.</p>
+  </div>
+
+  <section id="objet">
+    <div class="section-head"><span class="section-num">1</span><h2>Objet</h2></div>
+    <div class="section-body">
+      <p>Les présentes conditions générales d'utilisation (« CGU ») régissent l'accès et l'usage de l'application « Streaming Live Pétanque » (l'« Application »), éditée par Ouamassi. En installant ou en utilisant l'Application, vous acceptez sans réserve les présentes CGU.</p>
+    </div>
+  </section>
+
+  <section id="service">
+    <div class="section-head"><span class="section-num">2</span><h2>Description du service</h2></div>
+    <div class="section-body">
+      <p>L'Application permet de capturer un flux caméra et microphone, d'y incruster un tableau de score de pétanque personnalisable (équipes, mènes, boules restantes, bandeau défilant), puis de le diffuser en direct sur une chaîne YouTube reliée à votre compte Google. L'Application n'héberge ni ne stocke elle-même vos vidéos&nbsp;: la diffusion et son éventuel enregistrement sont gérés par YouTube, selon vos propres réglages de confidentialité.</p>
+    </div>
+  </section>
+
+  <section id="compte">
+    <div class="section-head"><span class="section-num">3</span><h2>Compte et connexion</h2></div>
+    <div class="section-body">
+      <p>L'utilisation de l'Application nécessite une connexion avec un compte Google disposant d'une chaîne YouTube activée pour le direct. Vous êtes responsable de la confidentialité de vos identifiants et de toute activité réalisée depuis votre compte au sein de l'Application.</p>
+    </div>
+  </section>
+
+  <section id="essai-abonnement">
+    <div class="section-head"><span class="section-num">4</span><h2>Essai gratuit et abonnement Premium</h2></div>
+    <div class="section-body">
+      <p>Un essai gratuit est offert à la première utilisation. Passé ce délai, certaines fonctionnalités (modification des noms d'équipe/mène/boules, résolutions supérieures à 480p, suppression des publicités et du logo) nécessitent un abonnement Premium payant.</p>
+      <div class="fact-table-wrap">
+        <table class="fact-table">
+          <tbody>
+            <tr><th>Durée de l'essai gratuit</th><td>14 jours à compter de la première connexion</td></tr>
+            <tr><th>Formule</th><td>Abonnement mensuel, renouvelé automatiquement</td></tr>
+            <tr><th>Paiement</th><td>Géré intégralement par Google Play — l'Application ne collecte aucune donnée bancaire</td></tr>
+            <tr><th>Résiliation</th><td>À tout moment depuis Google Play (Abonnements) ; l'accès Premium reste actif jusqu'à la fin de la période déjà payée</td></tr>
+            <tr><th>Remboursement</th><td>Selon les conditions générales de Google Play, non gérées par l'éditeur de l'Application</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Sans abonnement actif après l'essai, l'Application reste utilisable en version limitée (résolution 480p, tableau de score en lecture seule) plutôt que bloquée.</p>
+    </div>
+  </section>
+
+  <section id="contenu">
+    <div class="section-head"><span class="section-num">5</span><h2>Contenu diffusé et responsabilité de l'utilisateur</h2></div>
+    <div class="section-body">
+      <p>Vous êtes seul responsable du contenu audio et vidéo que vous diffusez via l'Application, ainsi que du respect des conditions d'utilisation et des règles de communauté de YouTube. L'éditeur de l'Application n'exerce aucun contrôle éditorial sur vos diffusions et ne saurait être tenu responsable de leur contenu, de leur disponibilité ou de leur suppression par YouTube.</p>
+    </div>
+  </section>
+
+  <section id="propriete">
+    <div class="section-head"><span class="section-num">6</span><h2>Propriété intellectuelle</h2></div>
+    <div class="section-body">
+      <p>L'Application, son nom, son logo et son interface sont la propriété de l'éditeur. Vous conservez l'intégralité des droits sur le contenu que vous diffusez. L'utilisation de l'Application ne vous confère aucun droit sur ses éléments graphiques ou son code, en dehors du droit d'usage personnel accordé par les présentes CGU.</p>
+    </div>
+  </section>
+
+  <section id="responsabilite">
+    <div class="section-head"><span class="section-num">7</span><h2>Limitation de responsabilité</h2></div>
+    <div class="section-body">
+      <p>L'Application est fournie « en l'état ». L'éditeur ne garantit pas une disponibilité continue du service de diffusion, qui dépend de votre connexion réseau, de votre appareil et de la disponibilité des services Google/YouTube. L'éditeur ne pourra être tenu responsable d'une interruption de diffusion, d'une perte de données de configuration, ou de tout dommage indirect résultant de l'utilisation de l'Application.</p>
+    </div>
+  </section>
+
+  <section id="resiliation">
+    <div class="section-head"><span class="section-num">8</span><h2>Suspension et résiliation</h2></div>
+    <div class="section-body">
+      <p>L'éditeur se réserve le droit de suspendre l'accès à l'Application en cas d'usage frauduleux, abusif ou contraire aux présentes CGU. Vous pouvez cesser d'utiliser l'Application à tout moment en la désinstallant et en résiliant votre abonnement le cas échéant depuis Google Play.</p>
+    </div>
+  </section>
+
+  <section id="modification">
+    <div class="section-head"><span class="section-num">9</span><h2>Modification des CGU</h2></div>
+    <div class="section-body">
+      <p>Les présentes CGU peuvent être mises à jour pour refléter des évolutions de l'Application ou des exigences légales. La date de dernière mise à jour est indiquée en haut de cette page. L'utilisation continue de l'Application après modification vaut acceptation des nouvelles CGU.</p>
+    </div>
+  </section>
+
+  <section id="droit">
+    <div class="section-head"><span class="section-num">10</span><h2>Droit applicable</h2></div>
+    <div class="section-body">
+      <p>Les présentes CGU sont soumises au droit français. Tout litige relatif à leur interprétation ou leur exécution relève de la compétence des tribunaux français, sauf disposition légale impérative contraire applicable à votre lieu de résidence.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-head"><span class="section-num">11</span><h2>Contact</h2></div>
+    <div class="section-body">
+      <div class="contact-card">
+        <div>
+          <div class="label">Question sur ces conditions</div>
+          <div class="email">ouamassipetanque@gmail.com</div>
+        </div>
+        <span class="pill">Réponse sous quelques jours</span>
+      </div>
+    </div>
+  </section>
+
+  <p style="font-size:0.85rem;color:var(--text-muted);margin-top:-16px;">Voir aussi la <a href="privacy.html">politique de confidentialité</a>.</p>
+
+  <footer>
+    <span>Streaming Live Pétanque — Conditions générales d'utilisation</span>
+    <span>Version du 11/08/2026</span>
+  </footer>
+
+</div>

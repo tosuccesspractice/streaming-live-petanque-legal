@@ -1,0 +1,423 @@
+<title>Politique de confidentialité — Streaming Live Pétanque</title>
+<style>
+  :root {
+    --bg: #faf6ef;
+    --surface: #ffffff;
+    --surface-2: #f1ece1;
+    --text: #211d17;
+    --text-muted: #6b6152;
+    --border: #e4dccb;
+    --accent: #1e5fb8;
+    --accent-soft: #e8eefb;
+    --rule: #d8cfba;
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #171410;
+    --surface: #1f1c16;
+    --surface-2: #262219;
+    --text: #f2ede2;
+    --text-muted: #b3a891;
+    --border: #35301f;
+    --accent: #6ea3ec;
+    --accent-soft: #1e2c42;
+    --rule: #3a3627;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #171410;
+      --surface: #1f1c16;
+      --surface-2: #262219;
+      --text: #f2ede2;
+      --text-muted: #b3a891;
+      --border: #35301f;
+      --accent: #6ea3ec;
+      --accent-soft: #1e2c42;
+      --rule: #3a3627;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  .masthead {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+  }
+
+  .mark .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex: none;
+  }
+
+  .masthead .doc-type {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  h1 {
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 4.5vw, 2.7rem);
+    line-height: 1.12;
+    margin: 0 0 10px;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+
+  .subtitle {
+    color: var(--text-muted);
+    font-size: 1.02rem;
+    margin: 0 0 28px;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+    font-size: 0.86rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .meta-row dt {
+    font-weight: 600;
+    color: var(--text);
+    display: inline;
+  }
+
+  .meta-row dt::after { content: " "; }
+
+  .meta-item { white-space: nowrap; }
+
+  .summary-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin: 8px 0 48px;
+  }
+
+  .summary-card p {
+    margin: 0;
+    font-size: 0.98rem;
+    color: var(--text-muted);
+  }
+
+  .summary-card strong { color: var(--text); font-weight: 600; }
+
+  section {
+    margin-bottom: 40px;
+    scroll-margin-top: 20px;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .section-num {
+    font-family: Georgia, "Iowan Old Style", serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--accent);
+    flex: none;
+    width: 1.6em;
+  }
+
+  h2 {
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+    font-weight: 700;
+    font-size: 1.32rem;
+    margin: 0;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+
+  .section-body {
+    margin-left: calc(1.6em + 14px);
+  }
+
+  .section-body p {
+    margin: 0 0 14px;
+    max-width: 62ch;
+  }
+
+  .section-body ul {
+    margin: 0 0 14px;
+    padding-left: 1.2em;
+  }
+
+  .section-body li {
+    margin-bottom: 8px;
+    max-width: 60ch;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 6px 0 18px;
+    font-size: 0.92rem;
+  }
+
+  .data-table-wrap { overflow-x: auto; }
+
+  .data-table th, .data-table td {
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .data-table th {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .data-table td { color: var(--text-muted); }
+  .data-table td.strong { color: var(--text); font-weight: 500; }
+
+  .pill {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 2px 9px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  a { color: var(--accent); text-decoration-color: var(--rule); text-underline-offset: 2px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .contact-card {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .contact-card .label {
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .contact-card .email {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (max-width: 560px) {
+    .section-body { margin-left: 0; margin-top: 6px; }
+    .section-head { align-items: flex-start; }
+  }
+</style>
+
+<div class="page">
+
+  <div class="masthead">
+    <span class="mark"><span class="dot"></span>Streaming Live Pétanque</span>
+    <span class="doc-type">Politique de confidentialité</span>
+  </div>
+
+  <h1>Politique de confidentialité</h1>
+  <p class="subtitle">Application mobile Android « Streaming Live Pétanque »</p>
+
+  <dl class="meta-row">
+    <div class="meta-item"><dt>Dernière mise à jour</dt><span>11 août 2026</span></div>
+    <div class="meta-item"><dt>Éditeur</dt><span>Ouamassi</span></div>
+    <div class="meta-item"><dt>Contact</dt><span>ouamassipetanque@gmail.com</span></div>
+  </dl>
+
+  <div class="summary-card">
+    <p><strong>En résumé&nbsp;:</strong> l'application sert à diffuser en direct des matchs de pétanque sur YouTube avec un tableau de score incrusté à l'image. Elle utilise votre compte Google pour publier sur votre chaîne YouTube, Firebase pour gérer l'essai gratuit et l'abonnement, et AdMob pour afficher des publicités. Aucune donnée n'est vendue à des tiers.</p>
+  </div>
+
+  <section id="editeur">
+    <div class="section-head"><span class="section-num">1</span><h2>Éditeur de l'application</h2></div>
+    <div class="section-body">
+      <p>« Streaming Live Pétanque » est développée et éditée à titre indépendant par Ouamassi. Pour toute question relative à cette politique ou à vos données, contactez <a href="mailto:ouamassipetanque@gmail.com">ouamassipetanque@gmail.com</a>.</p>
+    </div>
+  </section>
+
+  <section id="donnees">
+    <div class="section-head"><span class="section-num">2</span><h2>Données collectées</h2></div>
+    <div class="section-body">
+      <p>L'application collecte uniquement les données nécessaires à son fonctionnement&nbsp;:</p>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Donnée</th><th>Origine</th><th>Finalité</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="strong">Adresse e-mail, nom, identifiant de compte Google</td>
+              <td>Connexion Google (Google Sign-In)</td>
+              <td>Authentification et accès à votre chaîne YouTube</td>
+            </tr>
+            <tr>
+              <td class="strong">Autorisation d'accès YouTube (création de diffusions en direct)</td>
+              <td>YouTube Data API v3</td>
+              <td>Créer et démarrer la diffusion en direct sur votre chaîne</td>
+            </tr>
+            <tr>
+              <td class="strong">Flux caméra et microphone</td>
+              <td>Capteurs de l'appareil</td>
+              <td>Diffusés en direct vers YouTube pendant le live ; non enregistrés ni stockés par l'application</td>
+            </tr>
+            <tr>
+              <td class="strong">Statut d'essai gratuit et d'abonnement, date de fin</td>
+              <td>Firebase Authentication &amp; Firestore</td>
+              <td>Gérer la période d'essai et l'accès aux fonctionnalités Premium</td>
+            </tr>
+            <tr>
+              <td class="strong">Identifiant publicitaire, données d'usage</td>
+              <td>Google AdMob</td>
+              <td>Affichage de publicités (bannière et interstitiel) sur la version gratuite</td>
+            </tr>
+            <tr>
+              <td class="strong">Historique et statut d'achat de l'abonnement</td>
+              <td>Google Play Billing</td>
+              <td>Activer l'abonnement mensuel Premium</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="camera-micro">
+    <div class="section-head"><span class="section-num">3</span><h2>Caméra et microphone</h2></div>
+    <div class="section-body">
+      <p>La caméra et le microphone ne sont utilisés que pendant une diffusion en direct active, pour composer et transmettre le flux vidéo/audio vers YouTube. L'application elle-même n'enregistre, ne stocke ni ne transmet ces flux à aucun autre service. L'enregistrement éventuel de la vidéo est géré par YouTube, selon les paramètres de confidentialité que vous choisissez pour votre diffusion (privée ou publique).</p>
+    </div>
+  </section>
+
+  <section id="tiers">
+    <div class="section-head"><span class="section-num">4</span><h2>Partage des données avec des tiers</h2></div>
+    <div class="section-body">
+      <p>Aucune donnée personnelle n'est vendue. Les seuls destinataires sont les services tiers strictement nécessaires au fonctionnement de l'application&nbsp;:</p>
+      <ul>
+        <li><strong>Google / YouTube</strong> — connexion, création et gestion de vos diffusions en direct.</li>
+        <li><strong>Firebase (Google)</strong> — authentification et base de données pour le suivi de l'essai et de l'abonnement.</li>
+        <li><strong>Google AdMob</strong> — affichage des publicités dans la version gratuite de l'application.</li>
+        <li><strong>Google Play Billing</strong> — traitement du paiement de l'abonnement Premium ; l'application ne stocke jamais vos moyens de paiement.</li>
+      </ul>
+      <p>L'utilisation et le transfert des informations reçues de l'API YouTube par cette application respectent la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, y compris les exigences d'utilisation limitée (Limited Use).</p>
+    </div>
+  </section>
+
+  <section id="conservation">
+    <div class="section-head"><span class="section-num">5</span><h2>Conservation des données</h2></div>
+    <div class="section-body">
+      <p>Les données de compte et de statut d'abonnement sont conservées tant que votre compte existe dans l'application. Elles sont supprimées sur simple demande à l'adresse de contact ci-dessous, sous réserve des obligations légales de conservation applicables aux transactions financières.</p>
+    </div>
+  </section>
+
+  <section id="droits">
+    <div class="section-head"><span class="section-num">6</span><h2>Vos droits</h2></div>
+    <div class="section-body">
+      <p>Vous pouvez à tout moment demander l'accès, la rectification ou la suppression de vos données, ou révoquer l'accès de l'application à votre compte Google depuis les <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">paramètres de sécurité de votre compte Google</a>. Pour toute demande, écrivez à <a href="mailto:ouamassipetanque@gmail.com">ouamassipetanque@gmail.com</a>.</p>
+    </div>
+  </section>
+
+  <section id="mineurs">
+    <div class="section-head"><span class="section-num">7</span><h2>Utilisateurs mineurs</h2></div>
+    <div class="section-body">
+      <p>L'application n'est pas destinée aux enfants de moins de 13 ans et ne collecte pas sciemment de données auprès de ce public.</p>
+    </div>
+  </section>
+
+  <section id="modifications">
+    <div class="section-head"><span class="section-num">8</span><h2>Modifications de cette politique</h2></div>
+    <div class="section-body">
+      <p>Cette politique peut être mise à jour pour refléter des évolutions de l'application ou des exigences légales. La date de dernière mise à jour est indiquée en haut de cette page.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-head"><span class="section-num">9</span><h2>Contact</h2></div>
+    <div class="section-body">
+      <div class="contact-card">
+        <div>
+          <div class="label">Question sur vos données</div>
+          <div class="email">ouamassipetanque@gmail.com</div>
+        </div>
+        <span class="pill">Réponse sous quelques jours</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Streaming Live Pétanque — Politique de confidentialité</span>
+    <span>Version du 11/08/2026</span>
+  </footer>
+
+</div>
