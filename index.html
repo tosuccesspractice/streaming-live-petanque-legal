@@ -2,20 +2,91 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8" />
-<title>Streaming Live Pétanque — Documents légaux</title>
+<title>Streaming Live Pétanque</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Diffusez vos matchs de pétanque en direct sur YouTube avec un tableau de score personnalisé incrusté à l'image." />
 <style>
-  body { font-family: -apple-system, "Segoe UI", Arial, sans-serif; background:#faf6ef; color:#211d17; max-width:640px; margin:64px auto; padding:0 24px; line-height:1.6; }
-  h1 { font-size:1.5rem; }
-  a { color:#1e5fb8; }
-  li { margin-bottom: 10px; }
+  :root {
+    --bg: #faf6ef;
+    --surface: #ffffff;
+    --text: #211d17;
+    --text-muted: #6b6152;
+    --border: #e4dccb;
+    --accent: #1e5fb8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #171410;
+      --surface: #1f1c16;
+      --text: #f2ede2;
+      --text-muted: #b3a891;
+      --border: #35301f;
+      --accent: #6ea3ec;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .page { max-width: 640px; margin: 0 auto; padding: 72px 24px 96px; }
+  .mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 32px;
+  }
+  .mark .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+  h1 {
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    line-height: 1.15;
+    margin: 0 0 16px;
+    text-wrap: balance;
+  }
+  .subtitle { color: var(--text-muted); font-size: 1.05rem; max-width: 52ch; margin: 0 0 40px; }
+  .features { list-style: none; padding: 0; margin: 0 0 48px; display: grid; gap: 16px; }
+  .features li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 0.98rem;
+  }
+  .features li strong { display: block; margin-bottom: 4px; }
+  .links { display: flex; gap: 24px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid var(--border); font-size: 0.9rem; }
+  a { color: var(--accent); }
 </style>
 </head>
 <body>
-<h1>Streaming Live Pétanque</h1>
-<ul>
-  <li><a href="privacy.html">Politique de confidentialité</a></li>
-  <li><a href="terms.html">Conditions générales d'utilisation</a></li>
-</ul>
+<div class="page">
+  <span class="mark"><span class="dot"></span>Streaming Live Pétanque</span>
+
+  <h1>Diffuse tes matchs de pétanque en direct sur YouTube</h1>
+  <p class="subtitle">
+    Application Android qui filme, incruste un tableau de score personnalisable
+    (équipes, mène, boules restantes, bandeau défilant) et diffuse le tout en direct
+    sur ta propre chaîne YouTube — sans logiciel externe ni clé de flux à copier
+    manuellement.
+  </p>
+
+  <ul class="features">
+    <li><strong>Tableau de score en direct</strong>Noms d'équipe, mène, score et boules restantes, mis à jour en temps réel pendant le direct.</li>
+    <li><strong>Connexion directe à YouTube</strong>La diffusion se crée automatiquement sur ta chaîne, avec l'URL et la clé RTMP générées pour toi.</li>
+    <li><strong>Chat en direct intégré</strong>Les commentaires des spectateurs s'affichent dans l'application pendant le live.</li>
+  </ul>
+
+  <div class="links">
+    <a href="privacy.html">Politique de confidentialité</a>
+    <a href="terms.html">Conditions générales d'utilisation</a>
+    <a href="mailto:ouamassipetanque@gmail.com">Contact</a>
+  </div>
+</div>
 </body>
 </html>
